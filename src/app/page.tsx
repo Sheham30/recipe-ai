@@ -25,57 +25,47 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center  p-24  m-auto ">
-      <div className=" pb-10 mx-auto text-center flex flex-col items-start -center max-w-3xl">
-        <h1 className=" text-4xl  font-bold  text-gray-900 sm:text-6xl ">
-          Meet Your Personal <span className=" text-blue-600"> Recipe AI </span>
-          <p className=" mt-10 font-medium   text-lg  max-w-prose text-gray-900 ">
-            Simply type few ingredients using the format ingredient1,
-            ingredient12,..etc and Recipe AI will generate an all-new recipe on
-            demand...
+    <main className="flex min-h-screen flex-col items-center justify-center p-10 bg-gray-100">
+      <div className="text-center flex flex-col items-center max-w-4xl p-6 bg-white shadow-lg rounded-lg">
+          <img src="/logo.png" alt="Sudo Logo" className="mb-4 w-34 h-24" />
+
+          <h1 className="text-3xl font-bold text-gray-900 sm:text-5xl">
+              Discover Your Next Favorite Dish with Recipe AI
+          </h1>
+          <p className="mt-4 font-medium text-md max-w-prose text-gray-600">
+              Enter ingredients you have on hand, like chicken, rice, and beans, and let Recipe AI craft a unique recipe for you to try. Start cooking something new and exciting in just a few clicks!
           </p>
-        </h1>
       </div>
 
-      <section className="   w-1/2  mx-auto ">
-        <form
-          onSubmit={onSubmit}
-          className=" p-4 flex flex-col items-center gap-4  max-w-full mx-auto"
-        >
-          <input
-            type="text"
-            id="ingredients"
-            name="ingredients"
-            required
-            placeholder="Ingredient1, Ingredient2, Ingredient3,..etc"
-            className="border border-black  text-gray-900 p-4 rounded-lg max-w-full w-full text-xl "
-          />
-          <button
-            type="submit"
-            className="  text-white p-2 rounded-lg bg-blue-500   w-1/2 text-xl  "
-          >
-            Generate
-          </button>
-        </form>
+      <section className="w-full md:w-3/4 lg:w-1/2 mt-10">
+          <form onSubmit={onSubmit} className="p-6 flex flex-col items-center gap-4 bg-white shadow-md rounded-lg">
+              <input type="text" id="ingredients" name="ingredients" required
+                  placeholder="E.g., Chicken, Rice, Beans"
+                  className="border border-gray-300 text-gray-900 p-3 rounded-lg w-full text-lg" />
+              <button type="submit"
+                  className="text-white py-2 px-6 rounded-lg bg-blue-500 hover:bg-blue-600 text-lg">
+                  Create Recipe
+              </button>
+          </form>
       </section>
+      
       {loading ? (
-        <div className="flex flex-col items-center gap-4 w-1/2  mx-auto ">
-          <h2 className="m-10 font-medium   text-xl   max-w-prose text-blue-600 ">
-            Wait for it...
-          </h2>
-
-        </div>
+          <div className="flex flex-col items-center gap-4 w-full md:w-3/4 lg:w-1/2 mx-auto mt-10">
+              <h2 className="font-medium text-xl text-blue-600">
+                  Crafting your recipe...
+              </h2>
+          </div>
       ) : (
-        <div>
-          {result ? (
-            <section className="    mt-10 mx-auto  border border-black  bg-gray-50  rounded-xl     ">
-              <Card className=" p-4 flex flex-col items-center gap-4  max-w-full mx-auto text-xl  font-semibold    ">
-                <h2 className="whitespace-pre-wrap">{result}</h2>
-              </Card>
-            </section>
-          ) : null}
-        </div>
+          <div>
+              {result ? (
+                  <section className="mt-10 mx-auto w-full md:w-3/4 lg:w-1/2 border border-gray-300 bg-gray-50 rounded-xl p-6">
+                      <Card className="flex flex-col items-center gap-4 max-w-full mx-auto text-xl font-semibold">
+                          <h2 className="whitespace-pre-wrap">{result}</h2>
+                      </Card>
+                  </section>
+              ) : null}
+          </div>
       )}
-    </main>
+  </main>
   );
 }
