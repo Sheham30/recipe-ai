@@ -26,9 +26,8 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-10 bg-gray-100">
+      <img src="/logo_white.png" alt="Sudo Logo" className="logo-img" />
       <div className="text-center flex flex-col items-center max-w-4xl p-6 bg-white shadow-lg rounded-lg">
-          <img src="/logo.png" alt="Sudo Logo" className="mb-4 w-34 h-24" />
-
           <h1 className="text-3xl font-bold text-gray-900 sm:text-5xl">
               Discover Your Next Favorite Dish with Recipe AI
           </h1>

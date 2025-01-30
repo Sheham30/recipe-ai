@@ -10,3 +10,36 @@
   
 }
 
+main {
+  background-image: url(https://sudoconsultants.com/wp-content/uploads/2025/01/DEMO-AI-2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-container::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black overlay */
+  z-index: 1; /* Ensures the overlay is behind the content */
+}
+
+.bg-white, .bg-gray-50 {
+  z-index: 10;
+}
+
+.text-blue-600 {
+  color: #FFFFFF;
+  z-index: 10;
+}
+
+.logo-img {
+  width: 350px;  /* Smaller width for the logo */
+  height: auto;  /* Maintain aspect ratio */
+  margin-bottom: 50px;
+  z-index: 10;
+}
